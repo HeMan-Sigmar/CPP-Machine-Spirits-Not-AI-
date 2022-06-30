@@ -4,6 +4,8 @@
 #include <glm/glm.hpp>
 #include <vector>
 #include "PathFinder.h"
+#include <set>
+#include <algorithm>
 
 
 namespace AIForGames
@@ -112,72 +114,78 @@ namespace AIForGames
                 }
             }
         }
-        std::vector<node*> dijkstrassearch(node* startnode, node* endnode);
 
-        void dijkstrassearch(node* startnode, node* endnode)
+
+        std::vector<Node*> dijkstrassearch(Node* startnode, Node* endnode)
         {
             // validate the input
-            if (startnode  == nullptr || endnode == nullptr)
-                throw run_time
+            if (startnode == nullptr || endnode == nullptr)
+            {
+                throw std::runtime_error("Both start and end  must be Specified!!!");
+            }
+            // initialise the starting node
+            startnode-> gScore = 0;
+            startnode -> previous = nullptr;
 
-                if startnode == endnode
-                    return empty path
+            // create our temporary lists for storing nodes we’re visiting/visited
+            std::vector<Node*>openlist;
+            std::set<Node*>closedlist;
+            Node* currentNode;
 
-                    // initialise the starting node
-                    set startnode.gscore to 0
-                    set startnode.parent to null
+            openlist.push_back(startnode);
 
-                    // create our temporary lists for storing nodes we’re visiting/visited
-                    let openlist be a list of nodes
-                    let closedlist be a list of nodes
+            while (!openlist.empty())
+            {
+                std::sort(openlist.begin(), openlist.end(), [](Node* n1, Node* n2)
+                {
+                        return n1->gScore > n2->gScore;
+                });
 
-                    add startnode to openlist
+                if (currentNode == endnode)
+                {
+                    break;
+                }
+                currentNode = openlist.back();
+                closedlist.insert(currentNode);
+                
+                for (Edge *c )
+                {
+                        if (!c.target = closedlist)
+                        {
+                            gScore = currentNode->gScore + c.cost;
+                        }
+                            // have not yet visited the node.
+                            // so calculate the score and update its parent.
+                            // also add it to the openlist for processing.
+                            if (c.target not in openlist)
+                            {
+                                c.target -> gScore = gScore;
+                                let c.target.parent = currentnode;
+                                add c.target to openlist;
+                            }
+                                // node is already in the openlist with a valid score.
+                                // so compare the calculated score with the existing
+                                // to find the shorter path.
+                            else if (gscore < c.target.gscore)
+                            {
+                                let c.target.gscore = gscore;
+                                let c.target.parent = currentnode;
+                            }
+                }
+            }
 
-                    while openlist is not empty
-                    sort openlist by node.gscore
 
-                    let currentnode = first item in openlist
+                    //// create path in reverse from endnode to startnode
+                    //let path be a list of nodes
+                    //let currentnode = endnode
 
-                    // if we visit the endnode, then we can exit early.
-                    // sorting the openlist above guarantees the shortest path is found,
-                    // given no negative costs (a prerequisite of the algorithm).
-                    // this is an optional optimisation that improves performance,
-                    // but doesn’t always guarantee the shortest path.
-                    if currentnode is endnode
-                    exit while loop
+                    //while currentnode is not null
+                    //add currentnode to beginning of path
+                    //let currentnode = currentnode.parent
 
-                    remove currentnode from openlist
-                    add currentnode to closedlist
+                    //// return the path for navigation between startnode/endnode
+                    //return path //tempory list 
 
-                    for all connections c in currentnode
-                    if c.target not in closedlist
-                    let gscore = currentnode.gscore + c.cost
-
-                    // have not yet visited the node.
-                    // so calculate the score and update its parent.
-                    // also add it to the openlist for processing.
-                    if c.target not in openlist
-                    let c.target.gscore = gscore
-                    let c.target.parent = currentnode
-                    add c.target to openlist
-
-                    // node is already in the openlist with a valid score.
-                    // so compare the calculated score with the existing
-                    // to find the shorter path.
-                    else if (gscore < c.target.gscore)
-                    let c.target.gscore = gscore
-                    let c.target.parent = currentnode
-
-                    // create path in reverse from endnode to startnode
-                    let path be a list of nodes
-                    let currentnode = endnode
-
-                    while currentnode is not null
-                    add currentnode to beginning of path
-                    let currentnode = currentnode.parent
-
-                    // return the path for navigation between startnode/endnode
-                    return path //tempory list 
         }
     };
 }
