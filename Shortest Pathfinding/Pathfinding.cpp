@@ -85,7 +85,7 @@ namespace AIForGames
         {
             // red color for the blocks
             Color cellColor = RED;
-            Color lineColor = RAYWHITE;
+            Color lineColor = GREEN;
 
             for (int y = 0; y < m_height; y++)
             {
@@ -148,44 +148,63 @@ namespace AIForGames
                 currentNode = openlist.back();
                 closedlist.insert(currentNode);
                 
-                for (Edge *c )
+                for (Edge& c : currentNode ->connections )
                 {
-                        if (!c.target = closedlist)
-                        {
-                            gScore = currentNode->gScore + c.cost;
-                        }
-                            // have not yet visited the node.
-                            // so calculate the score and update its parent.
-                            // also add it to the openlist for processing.
-                            if (c.target not in openlist)
-                            {
-                                c.target -> gScore = gScore;
-                                let c.target.parent = currentnode;
-                                add c.target to openlist;
-                            }
-                                // node is already in the openlist with a valid score.
-                                // so compare the calculated score with the existing
-                                // to find the shorter path.
-                            else if (gscore < c.target.gscore)
-                            {
-                                let c.target.gscore = gscore;
-                                let c.target.parent = currentnode;
-                            }
+                    if (closedlist.count(c.target) == 0)
+                    {
+                        float gScore = currentNode->gScore + c.cost;
+                        
+                        // have not yet visited the node.
+                        // so calculate the score and update its parent.
+                        // also add it to the openlist for processing.
+                    if (std::find(openlist.begin(), openlist.end(), c.target) == openlist.end())
+                    {
+                        c.target -> gScore = gScore;
+                        c.target -> previous = currentNode;
+                        openlist.push_back(c.target);
+                    }
+                        // node is already in the openlist with a valid score.
+                        // so compare the calculated score with the existing
+                        // to find the shorter path.
+                    else if (gScore < c.target->gScore)
+                    {
+                        c.target -> gScore = gScore;
+                        c.target -> previous = currentNode;
+                    }
+                    }
                 }
             }
+                    // create path in reverse from endnode to startnode
+                    std::vector<Node*>path;
+                    currentNode = endnode;
 
+                    while (currentNode != nullptr)
+                    {
+                        path.push_back(currentNode);
+                        currentNode = currentNode -> previous;
+                    }
+                    std::reverse(path.begin(), path.end());
+                    // return the path for navigation between startnode/endnode
+                    return path; //tempory list 
 
-                    //// create path in reverse from endnode to startnode
-                    //let path be a list of nodes
-                    //let currentnode = endnode
+        }
+        void DrawPath(std::vector<Node*> path, Color LineColor)
+        {
+            for (int i = 1; i < path.size(); i++)
+            {
+                glm::ivec2 p1 = path[i - 1]->position + 0.5f * m_cellSize;
+                glm::ivec2 p2 = path[i]->position + 0.5f * m_cellSize;
+                DrawLine(p1.x, p1.y, p2.x, p2.y, LineColor);
 
-                    //while currentnode is not null
-                    //add currentnode to beginning of path
-                    //let currentnode = currentnode.parent
-
-                    //// return the path for navigation between startnode/endnode
-                    //return path //tempory list 
-
+                if (i == 1)
+                {
+                    DrawCircle(p1.x, p1.y);
+                }
+                if (i == path.size() -1)
+                {
+                    DrawCircle(p1.x, p1.y);
+                }
+            }
         }
     };
 }

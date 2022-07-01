@@ -35,6 +35,7 @@ namespace AIForGames
         {
             connections.push_back(Edge(other, cost));
         }
+    public:
         std::vector<Node*> dijkstrassearch(Node* startnode, Node* endnode);
 
     };
