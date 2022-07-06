@@ -5,6 +5,7 @@
 #include <vector>
 #include "PathFinder.h"
 #include "Pathfinding.cpp"
+#include "PathAgent.h"
 
 
  using namespace AIForGames;
@@ -32,16 +33,41 @@ int main()
     std::vector<Node*> nodeMapPath = memes.dijkstrassearch(start, end);
     Color lineColor = { 255, 255, 255, 255 };
 
+    PathAgent agent;
+    agent.SetNode(start);
+    agent.SetSpeed(4);
+    float time = (float)GetTime();
+    float deltaTime;
     while (!WindowShouldClose())
     {
+        float fTime = (float)GetTime();
+        deltaTime = fTime - time;
+        time = fTime;
         BeginDrawing();
         ClearBackground(BLACK);
 
-        //DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        if (IsMouseButtonPressed(0))
+        {
+            Vector2 mousePos = GetMousePosition();
+            start = memes.GetClosestNode(glm::vec2(mousePos.x, mousePos.y));
+            nodeMapPath = memes.dijkstrassearch(start, end);
+            agent.GoToNode(end);
+        }
+        if (IsMouseButtonPressed(1))
+        {
+            Vector2 mousePos = GetMousePosition();
+            end = memes.GetClosestNode(glm::vec2(mousePos.x, mousePos.y));
+            nodeMapPath = memes.dijkstrassearch(start, end);
+            agent.GoToNode(end);
+        }
+
+        agent.Update(deltaTime);
+        agent.Draw();
         memes.Draw();
-        memes.DrawPath(nodeMapPath, lineColor);
+       memes.DrawPath(nodeMapPath, lineColor);
         EndDrawing();
     }
+
 
     CloseWindow();
 

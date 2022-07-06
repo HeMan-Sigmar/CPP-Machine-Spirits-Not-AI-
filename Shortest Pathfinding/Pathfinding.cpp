@@ -130,22 +130,23 @@ namespace AIForGames
             // create our temporary lists for storing nodes we’re visiting/visited
             std::vector<Node*>openlist;
             std::set<Node*>closedlist;
-            Node* currentNode;
+           
 
             openlist.push_back(startnode);
 
             while (!openlist.empty())
             {
+                
                 std::sort(openlist.begin(), openlist.end(), [](Node* n1, Node* n2)
                 {
-                        return n1->gScore > n2->gScore;
+                        return n1->gScore < n2->gScore;
                 });
-
+                Node* currentNode = openlist.back();
                 if (currentNode == endnode)
                 {
                     break;
                 }
-                currentNode = openlist.back();
+                openlist.pop_back();
                 closedlist.insert(currentNode);
                 
                 for (Edge& c : currentNode ->connections )
@@ -174,9 +175,10 @@ namespace AIForGames
                     }
                 }
             }
+
                     // create path in reverse from endnode to startnode
                     std::vector<Node*>path;
-                    currentNode = endnode;
+                    Node* currentNode = endnode;
 
                     while (currentNode != nullptr)
                     {
@@ -192,19 +194,35 @@ namespace AIForGames
         {
             for (int i = 1; i < path.size(); i++)
             {
-                glm::ivec2 p1 = path[i - 1]->position + 0.5f * m_cellSize;
-                glm::ivec2 p2 = path[i]->position + 0.5f * m_cellSize;
-                DrawLine(p1.x, p1.y, p2.x, p2.y, LineColor);
+                float p1 = (path[i - 1]->position.x + 0.5f) * m_cellSize;
+                float p2 = (path[i - 1]->position.y + 0.5f) * m_cellSize;
+                float p3 = (path[i]->position.x + 0.5f) * m_cellSize;
+                float p4 = (path[i]->position.y + 0.5f) * m_cellSize;
+                DrawLine(p1, p2, p3, p4, LineColor);
 
                 if (i == 1)
                 {
-                    DrawCircle(p1.x, p1.y);
+                    DrawCircle(p1, p2, p3/3, WHITE);
                 }
                 if (i == path.size() -1)
                 {
-                    DrawCircle(p1.x, p1.y);
+                    DrawCircle(p1, p2, p4/5, WHITE);
                 }
             }
+        }
+        Node* GetClosestNode(glm::vec2 worldPos)
+        {
+            int i = (int)(worldPos.x / m_cellSize);
+            if (i < 0 || i >= m_width)
+            {
+                return nullptr;
+            }
+            int j = (int)(worldPos.y / m_cellSize);
+            if (j < 0 || j >= m_width) 
+            { 
+                return nullptr; 
+            }
+        return GetNode(i, j);
         }
     };
 }

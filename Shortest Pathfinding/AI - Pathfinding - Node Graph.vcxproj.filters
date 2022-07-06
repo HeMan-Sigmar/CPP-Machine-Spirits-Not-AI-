@@ -21,7 +21,7 @@
     <ClCompile Include="Pathfinding.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PathFinder.cpp">
+    <ClCompile Include="PathAgent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +30,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PathFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PathAgent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
