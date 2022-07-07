@@ -16,19 +16,27 @@ namespace AIForGames
 
     void PathAgent::GoToNode(Node* node)
     {
-        m_path = dijkstrassearch(m_currentNode, node);
+        m_path = NodeMap.dijkstrassearch(m_currentNode, node);
         m_currentIndex = 0;
     }
+    void PathAgent::SetNode()
+    {
 
+    }
+    void PathAgent::SetSpeed(int m_speed)
+    {
+       speed = m_speed;
+    }
     void PathAgent::Update(float deltaTime)
     {
         if (m_path.empty()) 
         {
             return;
         }
-        float m_distance;
+        
         glm::vec2 direction = glm::normalize(m_path[m_currentIndex + 1]->position - m_position);
-        m_distance = glm::distance(m_path[m_currentIndex + 1]->position + m_position);
+        float m_distance = glm::distance(m_position, m_path[m_currentIndex + 1]->position);
+
 
         if (m_distance > 0)
         {
