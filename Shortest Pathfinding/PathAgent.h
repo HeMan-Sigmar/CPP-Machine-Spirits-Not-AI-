@@ -19,12 +19,13 @@ namespace AIForGames
         Node* m_currentNode;
 
         float m_speed;
-
+    
     public:
         void Update(float deltaTime);
         void GoToNode(Node* node);
         void Draw();
         void SetSpeed(int m_speed);
-        void SetNode();
+        void SetNode(Node* position);
+        std::vector<Node*> dijkstrassearch(Node* m_currentNode, Node* node);
     };
 }
