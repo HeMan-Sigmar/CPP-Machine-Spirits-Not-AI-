@@ -1,38 +1,34 @@
 ﻿  Main.cpp
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(1,13): warning C4081: expected 'newline'; found ';'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(31,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(32,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(51,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(51,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(110,60): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(109,60): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(108,74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(108,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(201,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(201,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(201,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(201,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(205,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(205,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(209,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(209,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Main.cpp(37,11): error C2039: 'SetNode': is not a member of 'AIForGames::PathAgent'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.h(12): message : see declaration of 'AIForGames::PathAgent'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Main.cpp(38,11): error C2039: 'SetSpeed': is not a member of 'AIForGames::PathAgent'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.h(12): message : see declaration of 'AIForGames::PathAgent'
   PathAgent.cpp
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(19,18): error C3861: 'dijkstrassearch': identifier not found
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(31,27): error C2672: 'glm::distance': no matching overloaded function found
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(31,85): error C2780: 'genType glm::distance(const genType &,const genType &)': expects 2 arguments - 1 provided
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\packages\glm.0.9.9.800\build\native\include\glm\detail\func_geometric.inl(145): message : see declaration of 'glm::distance'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(31,85): error C2780: 'T glm::distance(const glm::vec<L,T,Q> &,const glm::vec<L,T,Q> &)': expects 2 arguments - 1 provided
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\packages\glm.0.9.9.800\build\native\include\glm\geometric.hpp(40): message : see declaration of 'glm::distance'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(30,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(50,18): warning C4552: '-': result of expression not used
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(63,29): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(68,44): error C2672: 'glm::normalize': no matching overloaded function found
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(68,128): error C2780: 'glm::vec<L,T,Q> glm::normalize(const glm::vec<L,T,Q> &)': expects 1 arguments - 2 provided
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\packages\glm.0.9.9.800\build\native\include\glm\geometric.hpp(70): message : see declaration of 'glm::normalize'
+  Pathfinding.cpp
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(21,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(22,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(41,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(41,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(100,56): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(99,56): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(98,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(98,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(194,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(194,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(198,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(198,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...

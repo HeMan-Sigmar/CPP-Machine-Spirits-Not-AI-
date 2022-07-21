@@ -24,8 +24,7 @@ namespace AIForGames
         void Update(float deltaTime);
         void GoToNode(Node* node);
         void Draw();
-        void SetSpeed(int m_speed);
         void SetNode(Node* position);
-        std::vector<Node*> dijkstrassearch(Node* m_currentNode, Node* node);
+        void SetSpeed(int speed);        
     };
 }

@@ -28,15 +28,14 @@ namespace AIForGames
         glm::vec2 position;
         std::vector<Edge> connections;
 
-        float gScore;
-        Node* previous;
+        float gScore{ 0 };
+        Node* previous{nullptr};
 
         void ConnectTo(Node* other, float cost)
         {
             connections.push_back(Edge(other, cost));
         }
-    public:
-        std::vector<Node*> dijkstrassearch(Node* startnode, Node* endnode);
+    public:        
 
     };
 
