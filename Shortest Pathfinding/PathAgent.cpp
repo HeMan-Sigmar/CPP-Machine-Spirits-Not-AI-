@@ -7,7 +7,7 @@
 #include <set>
 #include <algorithm>
 #include "PathAgent.h"
-
+#include "Pathfinding.h"
 
 
 
@@ -17,13 +17,13 @@ namespace AIForGames
 
     void PathAgent::GoToNode(Node* node)
     {
-        m_path = dijkstrassearch(m_currentNode, node);
+        m_path = NodeMap::DijkstraSearch(m_currentNode, node);
         m_currentIndex = 0;
     }
-    void PathAgent::SetNode(Node* position)
+    void PathAgent::SetNode(Node* node)
     {
-        m_currentNode->position;
-        m_position = position;
+        m_currentNode = node;
+        m_position = node->position;
     }
     void PathAgent::SetSpeed(int speed)
     {
@@ -31,36 +31,49 @@ namespace AIForGames
     }
     void PathAgent::Update(float deltaTime)
     {
+        //int i = 1;
+        //int j = 0;
+        //j += i;
+
+        //glm::vec2 direction(1, 0);
+        //m_position += direction * deltaTime * m_speed;
+
         if (m_path.empty()) 
         {
             return;
         }
         
         glm::vec2 direction = glm::normalize(m_path[m_currentIndex + 1]->position - m_position);
-        float m_distance = glm::distance(m_position, m_path[m_currentIndex + 1]->position);
-        direction - m_speed * deltaTime;
+        float distance = glm::distance(m_position, m_path[m_currentIndex + 1]->position);
+        direction /= distance;
 
-        if (m_distance > 0)
+        distance - m_speed * deltaTime;
+
+        if (distance > 0)
         {
-            m_speed* deltaTime* ;
+            m_position += direction * deltaTime * m_speed; // multiply by speed
         }
         else
         {
-            m_currentIndex + 1;
-            /*if(we’ve reached the end of our path)
+            m_currentIndex++;
+            m_currentNode = m_path[m_currentIndex];
+            if(m_currentIndex == m_path.size() - 1)
             {
-            snap to the final node and empty the path so future updates do nothing.
-            }*/
-        }
-        //if (we have a next node)
-        //{
-        //    then distance with the subtracted speed* deltaTime tells us how far we’ve overshot the node if we invert it.Find the unit vector from our previous node to the new next node, and move along this vector by the overshoot distance from the previous next node.
+                m_position = m_currentNode->position;
+                m_path.empty();
+            }
+            else
+            {
+                float distance = glm::distance(m_position, m_path[m_currentIndex + 1]->position - m_currentNode->position);
+                glm::vec2 direction = glm::normalize(distance);
 
-        //}
+            }
+        }
+
     }
 
     void PathAgent::Draw()
     {
-        DrawCircle((int)m_position.x, (int)m_position.y, 8, { 255,255,0,255 });
+        DrawCircle((int)((m_position.x + 0.5f) * 32), (int)((m_position.y + 0.5f) * 32), 8, { 255,255,0,255 });
     }
 }
