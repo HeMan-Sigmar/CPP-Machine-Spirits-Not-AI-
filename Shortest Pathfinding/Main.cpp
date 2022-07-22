@@ -18,11 +18,11 @@ int main()
 
     std::vector<std::string> asciiMap;
     asciiMap.push_back("000000000000");
-    asciiMap.push_back("010111011100");
-    asciiMap.push_back("010101110110");
-    asciiMap.push_back("010100000000");
-    asciiMap.push_back("010111111110");
-    asciiMap.push_back("010000000000");
+    asciiMap.push_back("011111111110");
+    asciiMap.push_back("011111111110");
+    asciiMap.push_back("011011000000");
+    asciiMap.push_back("011011011110");
+    asciiMap.push_back("011011011110");
     asciiMap.push_back("011111111110");
     asciiMap.push_back("000000000000");
 
@@ -36,25 +36,27 @@ int main()
 
     PathAgent agent;
     agent.SetNode(start);
-    agent.SetSpeed(1);
-    float time = (float)GetTime();
+    agent.SetSpeed(4);
+    //float time = (float)GetTime();
     float deltaTime;
     while (!WindowShouldClose())
     {
-        float fTime = (float)GetTime();
+    /*    float fTime = (float)GetFrameTime();
         deltaTime = fTime - time;
-        time = fTime;
+        time = fTime;*/
+        deltaTime = GetFrameTime();
+
         BeginDrawing();
         ClearBackground(BLACK);
         
-        if (IsMouseButtonPressed(0))
+        if (IsMouseButtonPressed(1))
         {
             Vector2 mousePos = GetMousePosition();
             start = memes.GetClosestNode(glm::vec2(mousePos.x, mousePos.y));
             nodeMapPath = NodeMap::DijkstraSearch(start, end);
             agent.GoToNode(end);
         }
-        if (IsMouseButtonPressed(1))
+        if (IsMouseButtonPressed(0))
         {
             Vector2 mousePos = GetMousePosition();
             end = memes.GetClosestNode(glm::vec2(mousePos.x, mousePos.y));
@@ -65,8 +67,8 @@ int main()
         agent.Update(deltaTime);
         agent.Draw();
         memes.Draw();
-        //DrawPath(agent.path, lineColor);
-       memes.DrawPath(nodeMapPath, lineColor);
+        memes.DrawPath(agent.m_path, RED);
+       //memes.DrawPath(nodeMapPath, lineColor);
         EndDrawing();
     }
 

@@ -113,8 +113,8 @@ namespace AIForGames
             throw std::runtime_error("Both start and end  must be Specified!!!");
         }
         // initialise the starting node
-        startnode->gScore = 0;
-        startnode->previous = nullptr;
+        startnode->gScore = { 0 };
+        startnode->previous = { nullptr };
 
         // create our temporary lists for storing nodes we’re visiting/visited
         std::vector<Node*>openlist;
@@ -128,7 +128,7 @@ namespace AIForGames
 
             std::sort(openlist.begin(), openlist.end(), [](Node* n1, Node* n2)
                 {
-                    return n1->gScore < n2->gScore;
+                    return n1->gScore > n2->gScore;
                 });
             Node* currentNode = openlist.back();
             if (currentNode == endnode)

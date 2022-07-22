@@ -1,12 +1,4 @@
-﻿  Main.cpp
-  PathAgent.cpp
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(30,18): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(50,18): warning C4552: '-': result of expression not used
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(63,29): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(68,44): error C2672: 'glm::normalize': no matching overloaded function found
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.cpp(68,128): error C2780: 'glm::vec<L,T,Q> glm::normalize(const glm::vec<L,T,Q> &)': expects 1 arguments - 2 provided
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\packages\glm.0.9.9.800\build\native\include\glm\geometric.hpp(70): message : see declaration of 'glm::normalize'
-  Pathfinding.cpp
+﻿  Pathfinding.cpp
 C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(21,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(22,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(41,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -31,4 +23,4 @@ C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\P
 C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(194,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(198,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(198,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
+  AI - Pathfinding - Node Graph.vcxproj -> C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\x64\Debug\AI - Pathfinding - Node Graph.exe

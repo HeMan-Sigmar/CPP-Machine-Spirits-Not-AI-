@@ -25,7 +25,7 @@ namespace AIForGames
         m_currentNode = node;
         m_position = node->position;
     }
-    void PathAgent::SetSpeed(int speed)
+    void PathAgent::SetSpeed(float speed)
     {
        m_speed = speed;
     }
@@ -43,15 +43,15 @@ namespace AIForGames
             return;
         }
         
-        glm::vec2 direction = glm::normalize(m_path[m_currentIndex + 1]->position - m_position);
+        glm::vec2 direction = glm::normalize(m_position - m_path[m_currentIndex + 1]->position);
         float distance = glm::distance(m_position, m_path[m_currentIndex + 1]->position);
-        direction /= distance;
+        //direction /= distance;
 
-        distance - m_speed * deltaTime;
+        float distancethisframe = distance - (m_speed * deltaTime);
 
-        if (distance > 0)
+        if (distancethisframe > 0)
         {
-            m_position += direction * deltaTime * m_speed; // multiply by speed
+            m_position -= direction * deltaTime * m_speed; // multiply by speed
         }
         else
         {
@@ -60,13 +60,14 @@ namespace AIForGames
             if(m_currentIndex == m_path.size() - 1)
             {
                 m_position = m_currentNode->position;
-                m_path.empty();
+                m_path.clear();
             }
             else
             {
-                float distance = glm::distance(m_position, m_path[m_currentIndex + 1]->position - m_currentNode->position);
-                glm::vec2 direction = glm::normalize(distance);
-
+              
+              float distance = glm::distance(m_position, m_path[m_currentIndex + 1]->position - m_currentNode->position);
+              direction = glm::normalize(direction);
+              m_position += -distancethisframe * direction;
             }
         }
 
