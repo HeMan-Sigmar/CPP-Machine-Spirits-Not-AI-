@@ -3,7 +3,7 @@
 #include "raylib.h"
 #include <glm/glm.hpp>
 #include <vector>
-
+#include "Agent.h"
 #include "PathFinder.h"
 #include "Pathfinding.h"
 #include "PathAgent.h"
@@ -33,8 +33,9 @@ int main()
     Node* end = memes.GetNode(10, 2);
     std::vector<Node*> nodeMapPath = NodeMap::DijkstraSearch(start, end);
     Color lineColor = { 255, 255, 255, 255 };
+    //Agent agent(&nodeMap, new GotoPointBehaviour());
 
-    PathAgent agent;
+    PathAgent agent(&nodeMap, new GotoPointBehaviour());;
     agent.SetNode(start);
     agent.SetSpeed(4);
     //float time = (float)GetTime();

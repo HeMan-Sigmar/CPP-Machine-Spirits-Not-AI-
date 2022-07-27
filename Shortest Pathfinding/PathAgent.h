@@ -14,18 +14,19 @@ namespace AIForGames
     private:
         glm::vec2 m_position;
 
-        
+
         int m_currentIndex;
         Node* m_currentNode;
 
         float m_speed;
-    
+
     public:
         std::vector<Node*> m_path;
         void Update(float deltaTime);
         void GoToNode(Node* node);
         void Draw();
         void SetNode(Node* position);
-        void SetSpeed(float speed);        
+        void SetSpeed(float speed);
     };
+
 }

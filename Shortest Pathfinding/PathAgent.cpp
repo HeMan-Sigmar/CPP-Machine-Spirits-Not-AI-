@@ -7,6 +7,7 @@
 #include <set>
 #include <algorithm>
 #include "PathAgent.h"
+#include "Agent.h"
 #include "Pathfinding.h"
 
 
@@ -77,4 +78,7 @@ namespace AIForGames
     {
         DrawCircle((int)((m_position.x + 0.5f) * 32), (int)((m_position.y + 0.5f) * 32), 8, { 255,255,0,255 });
     }
+
+    
+
 }
