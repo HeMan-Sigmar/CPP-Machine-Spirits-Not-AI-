@@ -6,7 +6,7 @@
 #include <algorithm>
 #include "GotoPointBehaviour.h"
 #include"Agent.h"
-namespace AIEForGames
+namespace AIForGames
 {
     void GotoPointBehaviour::Update(Agent* agent, float deltaTime)
     {
@@ -17,4 +17,5 @@ namespace AIEForGames
             agent->GoTo(glm::vec2(mousePos.x, mousePos.y));
         }
     }
+
 }

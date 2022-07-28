@@ -6,10 +6,7 @@
 #include "PathFinder.h"
 #include <set>
 #include <algorithm>
-#include "PathAgent.h"
-#include "Pathfinding.h"
 #include "Agent.h"
-#include "Pathfinding.h"
 #include "Behaviour.h"
 
 
@@ -22,9 +19,13 @@ namespace AIForGames
         m_pathAgent.Update(deltaTime);
     }
 
-    void GoTo(glm::vec2 point)
+    void Agent::GoTo(glm::vec2 point)
     {
-        Node* end = m_nodeMap.GetClosestNode(point);
-        m_pathAgent->GoToNode(end);
+        Node* end = m_nodeMap->GetClosestNode(point);
+        m_pathAgent.GoToNode(end);
+    }
+    bool Agent::PathComplete()
+    {
+        return m_pathAgent.GetPath().empty();
     }
 }

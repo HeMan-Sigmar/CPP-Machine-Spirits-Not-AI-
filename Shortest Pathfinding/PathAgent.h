@@ -21,12 +21,14 @@ namespace AIForGames
         float m_speed;
 
     public:
+
         std::vector<Node*> m_path;
         void Update(float deltaTime);
         void GoToNode(Node* node);
         void Draw();
         void SetNode(Node* position);
         void SetSpeed(float speed);
+
     };
 
 }

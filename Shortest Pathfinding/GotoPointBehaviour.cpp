@@ -9,7 +9,7 @@
 #include "GotoPointBehaviour.h" 
 
 
-namespace AIEForGames 
+namespace AIForGames 
 {
     void GotoPointBehaviour::Update(Agent* agent, float deltaTime)
     {

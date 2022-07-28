@@ -7,6 +7,8 @@
 #include "PathFinder.h"
 #include "Pathfinding.h"
 #include "PathAgent.h"
+#include "GotoPointBehaviour.h"
+#include "WanderBehaviour.h"
 
 
 using namespace AIForGames;
@@ -33,18 +35,17 @@ int main()
     Node* end = memes.GetNode(10, 2);
     std::vector<Node*> nodeMapPath = NodeMap::DijkstraSearch(start, end);
     Color lineColor = { 255, 255, 255, 255 };
-    //Agent agent(&nodeMap, new GotoPointBehaviour());
 
-    PathAgent agent(&nodeMap, new GotoPointBehaviour());;
+    PathAgent agent(&memes, new GotoPointBehaviour());
     agent.SetNode(start);
     agent.SetSpeed(4);
-    //float time = (float)GetTime();
+    Agent agent2(&memes, new WanderBehaviour());
+    agent2.SetNode(memes.GetRandomNode());
+
     float deltaTime;
     while (!WindowShouldClose())
     {
-    /*    float fTime = (float)GetFrameTime();
-        deltaTime = fTime - time;
-        time = fTime;*/
+
         deltaTime = GetFrameTime();
 
         BeginDrawing();

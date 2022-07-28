@@ -3,13 +3,12 @@
 #include "raylib.h"
 #include <glm/glm.hpp>
 #include <vector>
-#include "Behaviour.h"
 #include "Agent.h"
+#include "Behaviour.h"
 
 
 
-
-namespace AIEForGames 
+namespace AIForGames 
 {
     class GotoPointBehaviour : public Behaviour
     {

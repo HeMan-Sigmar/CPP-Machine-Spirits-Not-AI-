@@ -1,13 +1,13 @@
 #pragma once
 #include <iostream>
 #include "raylib.h"
-#include "Agent.h"
 #include <glm/glm.hpp>
 #include <vector>
 
 
 namespace AIForGames
 {
+    class Agent;
     class Behaviour
     {
     public:

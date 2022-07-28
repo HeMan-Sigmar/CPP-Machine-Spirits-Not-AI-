@@ -1,30 +1,46 @@
 ﻿  Agent.cpp
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Behaviour.h(14,29): error C2061: syntax error: identifier 'Agent'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.cpp(21,46): error C2660: 'AIForGames::Behaviour::Update': function does not take 2 arguments
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Behaviour.h(14,22): message : see declaration of 'AIForGames::Behaviour::Update'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.cpp(27,21): error C2065: '_nodeMap': undeclared identifier
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.cpp(28,9): error C2065: 'm_pathAgent': undeclared identifier
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(22,18): warning C4150: deletion of pointer to incomplete type 'AIForGames::Behaviour'; no destructor called
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(13): message : see declaration of 'AIForGames::Behaviour'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.cpp(29,28): error C2039: 'GetPath': is not a member of 'AIForGames::PathAgent'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\PathAgent.h(12): message : see declaration of 'AIForGames::PathAgent'
+  Behaviour.cpp
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(22,18): warning C4150: deletion of pointer to incomplete type 'AIForGames::Behaviour'; no destructor called
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(13): message : see declaration of 'AIForGames::Behaviour'
   GotoPointBehaviour.cpp
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(19,34): error C2061: syntax error: identifier 'Behaviour'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(27,18): error C2143: syntax error: missing ';' before '*'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(27,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(27,29): error C2238: unexpected token(s) preceding ';'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(19,69): error C2065: '_behaviour': undeclared identifier
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(19,59): error C2614: 'AIForGames::Agent': illegal member initialization: 'm_current' is not a base or member
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(20,27): error C2065: 'm_current': undeclared identifier
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(20,18): error C2541: 'delete': cannot delete objects that are not pointers
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.h(15,5): error C2504: 'Behaviour': base class undefined
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.h(17,29): error C2061: syntax error: identifier 'Agent'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.cpp(14,42): error C2761: 'void AIEForGames::GotoPointBehaviour::Update(void)': redeclaration of member is not allowed
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.cpp(14,37): error C2065: 'Agent': undeclared identifier
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.cpp(14,44): error C2065: 'agent': undeclared identifier
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.cpp(14,51): error C2062: type 'float' unexpected
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.cpp(15,5): error C2143: syntax error: missing ';' before '{'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\GotoPointBehaviour.cpp(15,5): error C2447: '{': missing function header (old-style formal list?)
   Main.cpp
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Behaviour.h(14,29): error C2061: syntax error: identifier 'Agent'
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Main.cpp(38,22): error C2065: 'nodeMap': undeclared identifier
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Main.cpp(38,35): error C2061: syntax error: identifier 'GotoPointBehaviour'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(22,18): warning C4150: deletion of pointer to incomplete type 'AIForGames::Behaviour'; no destructor called
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(13): message : see declaration of 'AIForGames::Behaviour'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Main.cpp(39,53): error C2661: 'AIForGames::PathAgent::PathAgent': no overloaded function takes 2 arguments
   PathAgent.cpp
-C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Behaviour.h(14,29): error C2061: syntax error: identifier 'Agent'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(22,18): warning C4150: deletion of pointer to incomplete type 'AIForGames::Behaviour'; no destructor called
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Agent.h(13): message : see declaration of 'AIForGames::Behaviour'
+  Pathfinding.cpp
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(21,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(22,37): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(41,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(41,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(100,56): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(99,56): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(98,70): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(98,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(190,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(194,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(194,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(198,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(198,28): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(217,5): error C2556: 'void AIForGames::NodeMap::GetRandomNode(void)': overloaded function differs only by return type from 'AIForGames::Node *AIForGames::NodeMap::GetRandomNode(void)'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.h(15): message : see declaration of 'AIForGames::NodeMap::GetRandomNode'
+C:\Users\s214773\source\repos\CPP-Machine-Spirits-Not-AI-\Shortest Pathfinding\Pathfinding.cpp(216,19): error C2040: 'AIForGames::NodeMap::GetRandomNode': 'void (void)' differs in levels of indirection from 'AIForGames::Node *(void)'
+  WanderBehaviour.cpp
   Generating Code...
