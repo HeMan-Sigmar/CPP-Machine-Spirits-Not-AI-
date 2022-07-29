@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "raylib.h"
-#include <glm/glm.hpp>
 #include <vector>
 #include "PathAgent.h"
 #include "Pathfinding.h"
@@ -26,11 +25,22 @@ namespace AIForGames
         void GoTo(glm::vec2 point);
         bool PathComplete();
         void SetNode(Node* position);
+        Agent* GetTarget();
+        Agent* SetTarget();
+        void SetSpeed(int speed) { m_speed = speed; }
+        void SetColor(Color color) { m_color = color; }
+        glm::vec2 GetPosition() { return m_pathAgent.GetPosition(); }
+        void Reset();
+        Agent* GetNodeMap();
+        Agent* GetCellSize();
+        void GoToNode(Node* node);
     private:
         PathAgent m_pathAgent;
         Behaviour* m_current;
         NodeMap* m_nodeMap;
         Color m_color;
+        float m_speed;
+
     };
     
 

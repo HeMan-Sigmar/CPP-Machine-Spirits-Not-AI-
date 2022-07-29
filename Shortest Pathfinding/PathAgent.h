@@ -28,6 +28,8 @@ namespace AIForGames
         void Draw();
         void SetNode(Node* position);
         void SetSpeed(float speed);
+        glm::vec2 GetPosition() { return m_position; }
+        std::vector<Node*> GetPath();
 
     };
 

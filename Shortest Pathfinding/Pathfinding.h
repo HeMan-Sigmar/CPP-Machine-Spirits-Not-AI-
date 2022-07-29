@@ -18,5 +18,6 @@ namespace AIForGames
         static std::vector<Node*> DijkstraSearch(Node* startnode, Node* endnode);
         void DrawPath(std::vector<Node*> path, Color LineColor);        
         Node* GetClosestNode(glm::vec2 worldPos);
+
     };
 }

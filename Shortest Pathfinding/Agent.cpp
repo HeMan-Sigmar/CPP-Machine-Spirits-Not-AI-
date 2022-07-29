@@ -28,4 +28,13 @@ namespace AIForGames
     {
         return m_pathAgent.GetPath().empty();
     }
+    void SetTarget()
+    {
+
+    }
+
+    void Reset()
+    {
+
+    }
 }

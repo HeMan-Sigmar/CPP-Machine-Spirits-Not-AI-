@@ -9,6 +9,8 @@
 #include "PathAgent.h"
 #include "GotoPointBehaviour.h"
 #include "WanderBehaviour.h"
+#include "FollowBehaviour.h"
+#include "SelectorBehaviour.h"
 
 
 using namespace AIForGames;
@@ -36,12 +38,16 @@ int main()
     std::vector<Node*> nodeMapPath = NodeMap::DijkstraSearch(start, end);
     Color lineColor = { 255, 255, 255, 255 };
 
-    PathAgent agent(&memes, new GotoPointBehaviour());
+    Agent agent(&memes, new GotoPointBehaviour());
     agent.SetNode(start);
     agent.SetSpeed(4);
     Agent agent2(&memes, new WanderBehaviour());
     agent2.SetNode(memes.GetRandomNode());
-
+    Agent agent3(&memes, new FollowBehaviour());
+    agent3.SetNode(memes.GetRandomNode());
+    agent3.SetTarget(&agent);
+    agent3.SetSpeed(32);
+    new SelectorBehaviour(new FollowBehaviour(), new WanderBehaviour());
     float deltaTime;
     while (!WindowShouldClose())
     {

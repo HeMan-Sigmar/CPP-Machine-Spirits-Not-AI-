@@ -30,6 +30,10 @@ namespace AIForGames
     {
        m_speed = speed;
     }
+    std::vector<Node*> PathAgent::GetPath()
+    {
+        return m_path;
+    }
     void PathAgent::Update(float deltaTime)
     {
         //int i = 1;
